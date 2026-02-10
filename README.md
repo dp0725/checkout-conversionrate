@@ -1,5 +1,13 @@
 # Diagnosing a Drop in Checkout Conversion (Product Analytics Case Study)
 
+##Quickstart
+
+how to generate synthetic data
+Run attached data/generate.py dat to genrate synthetic data for 14 days
+how to run analysis
+
+what outputs to expect (charts / tables)
+
 ## Problem
 Over the last 14 days, the product team observed a **~15% drop in checkout conversion**.  
 As the Product Data Scientist, I will diagnose where the drop occurs in the funnel, identify the most likely drivers, and recommend actions with clear monitoring metrics.
@@ -49,16 +57,29 @@ The dataset includes common explanatory dimensions:
    - actions prioritized by expected impact and confidence
    - define dashboards / alerts to prevent recurrence
 
-## Key Findings (to be filled)
-- Where in the funnel the drop is concentrated:
-- Segments most impacted:
-- Primary driver(s):
-- Evidence supporting root cause:
+## Key Findings 
+- **Funnel localization:** The largest relative decline occurred at **add_to_cart → checkout**, with step conversion decreasing by ~X% compared to baseline. Other funnel steps remained largely stable.
+- **Impacted segments:** The drop is highly concentrated among **mobile users**, particularly in the recent time window.
+- **Primary driver:** Increased **page_load_time_ms** during the checkout transition for mobile users.
+- **Supporting evidence:**
+  - Checkout starts decreased while add-to-cart volume remained stable.
+  - Page load latency increased significantly for mobile users in the same time window.
+  - The effect is concentrated in the same segment and timeframe, indicating a performance-driven conversion drop.
+## Recommendations 
+### Immediate mitigation
+- Roll back or patch the mobile checkout change associated with increased latency.
+- Monitor **p95 page load latency**, checkout error rate, and payment failure rate as guardrail metrics.
 
-## Recommendations (to be filled)
-- Immediate mitigation:
-- Short-term fixes:
-- Longer-term prevention:
+### Short-term fixes
+- Optimize checkout performance (reduce latency, improve loading stability).
+- Add performance alerts for latency regressions.
+- Validate instrumentation and ensure no tracking issues.
+
+### Long-term prevention
+- Establish performance budgets for checkout flow.
+- Add automated monitoring for step-level conversion drops.
+- Run controlled experiments before full rollout of checkout changes.
+
 
 ## Monitoring Plan
 - North star: checkout conversion (purchase / visit)
