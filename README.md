@@ -4,9 +4,7 @@
 
 how to generate synthetic data
 Run attached data/generate.py dat to genrate synthetic data for 14 days
-how to run analysis
 
-what outputs to expect (charts / tables)
 
 ## Problem
 Over the last 14 days, the product team observed a **~15% drop in checkout conversion**.  
