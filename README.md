@@ -3,7 +3,7 @@
 ##Quickstart
 
 how to generate synthetic data
-Run attached data/generate.py dat to genrate synthetic data for 14 days
+Run attached data/generate.py data to genrate synthetic data for 14 days
 
 
 ## Problem
