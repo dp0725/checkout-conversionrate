@@ -17,6 +17,12 @@ Checkout conversion is a direct driver of revenue and customer trust. A sustaine
 - traffic mix shifts (lower-intent acquisition)
 - instrumentation / tracking issues (data quality)
 
+## Assumptions & Limitations
+- Data is synthetic; real-world validation would include release logs, error logs, and payment failure telemetry.
+- Causal conclusions assume no major tracking or instrumentation issues.
+- Further validation recommended via controlled experiment or rollback comparison.
+
+
 The goal is to isolate the **root cause** quickly and provide **decision-ready recommendations**.
 
 ## Data
